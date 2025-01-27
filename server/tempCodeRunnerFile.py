@@ -1,0 +1,1 @@
+    # wishlists = db.relationship('Wishlist', backref='destination', lazy=True)
