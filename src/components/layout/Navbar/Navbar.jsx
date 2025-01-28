@@ -10,14 +10,14 @@ function Navbar(){
                     <h4>Wander<span>With</span></h4>
                 </div>
                 <div className="nav">
-                    <NavLink to="/" className="nav-item" activeClassName="active">Home</NavLink>
-                    <NavLink to="/destinations" className="nav-item" activeClassName="active">Destinations</NavLink>
-                    <NavLink to="/about" className="nav-item" activeClassName="active">About</NavLink>
-                    <NavLink to="/guide" className="nav-item" activeClassName="active">Guides</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Home</NavLink>
+                    <NavLink to="/destinations" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Destinations</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>About</NavLink>
+                    <NavLink to="/guide" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Guides</NavLink>
                 </div>
                 <div className="links">
-                    <NavLink to="/login" activeClassName="active">Login</NavLink>
-                    <NavLink to="/signup" activeClassName="active">Sign Up</NavLink>
+                    <NavLink to="/login" className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink>
+                    <NavLink to="/signup" className={({ isActive }) => isActive ? "active" : ""}>Sign Up</NavLink>
                 </div>
             </div>
         </nav>

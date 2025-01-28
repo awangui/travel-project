@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-#serves as the main entry point
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models.models import db
@@ -19,8 +17,13 @@ CORS(app)
 db.init_app(app)
 migrate = Migrate(app, db)
 
-#register blueprints
+# Register blueprints
 app.register_blueprint(destinations_bp, url_prefix='/api')
+
+# Define a route for the root URL
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to the WanderWith API"})
 
 if __name__ == '__main__':
     app.run(port=5555)
